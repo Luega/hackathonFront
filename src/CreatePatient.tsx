@@ -4,13 +4,12 @@ import './App.css';
 
 function CreatePatient() {
 
-    const [id, setId] = useState();
-    const [name, setName] = useState();
-    const [surname, setSurname] = useState();
-    const [age, setAge] = useState();
-    const [phone, setPhone] = useState();
-    const [address, setAddress] = useState();
-    const [email, setEmail] = useState();
+    const [name, setName] = useState("");
+    const [surname, setSurname] = useState("");
+    const [age, setAge] = useState("");
+    const [phone, setPhone] = useState("");
+    const [address, setAddress] = useState("");
+    const [email, setEmail] = useState("");
 
     const navigate = useNavigate();
 
@@ -20,7 +19,6 @@ function CreatePatient() {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-                id: id,
                 name: name,
                 surname: surname,
                 age: age,
@@ -38,8 +36,6 @@ function CreatePatient() {
   return (
     <div className='create-patient'>
           <form onSubmit={handleSubmit}>
-              <input type="text" value={id} placeholder='id'
-              onChange={(e:any) => setId(e.target.value)} />
               <input type="text" value={name} placeholder='name'
               onChange={(e:any) => setName(e.target.value)} />
               <input type="text" value={surname} placeholder='surname'

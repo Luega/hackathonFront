@@ -6,16 +6,16 @@ function CreateTreatment() {
 
     const { id } = useParams();
 
-    const [date, setDate] = useState();
-    const [medicalHistory, setMedicalHistory] = useState();
-    const [symptoms, setSymptoms] = useState();
-    const [tests, setTests] = useState();
-    const [physicalExamination, setPhysicalExamination] = useState();
-    const [diagnosis, setDiagnosis] = useState();
-    const [treatmentPlan, setTreatmentPlan] = useState();
-    const [techniques, setTechniques] = useState();
-    const [treatmentExpectations, setTreatmentExpectations] = useState();
-    const [notes, setNotes] = useState();
+    const [date, setDate] = useState("");
+    const [medicalHistory, setMedicalHistory] = useState("");
+    const [symptoms, setSymptoms] = useState("");
+    const [tests, setTests] = useState("");
+    const [physicalExamination, setPhysicalExamination] = useState("");
+    const [diagnosis, setDiagnosis] = useState("");
+    const [treatmentPlan, setTreatmentPlan] = useState("");
+    const [techniques, setTechniques] = useState("");
+    const [treatmentExpectations, setTreatmentExpectations] = useState("");
+    const [notes, setNotes] = useState("");
 
     const navigate = useNavigate();
 
@@ -39,7 +39,7 @@ function CreateTreatment() {
         });
         const response = await fetch(request);
         const resJson = await response.json();
-        navigate(`/patients/${resJson[0].id}`);
+        navigate(`/patients/${resJson.id}`);
     };
   
   return (

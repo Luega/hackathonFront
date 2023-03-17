@@ -12,7 +12,7 @@ function Show() {
   const getPatient = async () => {
       await fetch(`http://localhost:8000/api/patients/${id}`)
       .then((response) => response.json())
-      .then(data => setPatient(data[0]))
+      .then(data => setPatient(data))
       .catch(err => err);
   };
 
@@ -23,9 +23,6 @@ function Show() {
   const handleClick = () => {
       navigate(`/patients/${id}/createTreatment`);
   }
-
-  console.log(patient);
-  
   
   return (
     <div className='Show'>

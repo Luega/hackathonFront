@@ -23,8 +23,6 @@ function Home() {
       navigate("/createPatient");
   }
 
-  console.log(reRender);
-
   const handleReRender = () => {
     setReRender(!reRender);
   }

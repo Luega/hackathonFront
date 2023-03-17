@@ -9,6 +9,7 @@ interface Props {
 }
 
 function Client({ patient, handleReRender }: Props) {
+
   const navigate = useNavigate();
 
   const handleClick = () => {
