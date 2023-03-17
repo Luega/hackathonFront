@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import Show from "./Show";
+import './App.css';
 import CreatePatient from "./CreatePatient";
 import CreateTreatment from "./CreateTreatment";
 const App = () => {

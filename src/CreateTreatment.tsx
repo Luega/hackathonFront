@@ -41,11 +41,19 @@ function CreateTreatment() {
         const resJson = await response.json();
         navigate(`/patients/${resJson.id}`);
     };
+
+    const redirectToHome = () => {
+      navigate("/");
+    }
   
   return (
-    <div className='create-patient'>
-          <form onSubmit={handleSubmit}>
-              <input type="text" value={date} placeholder='YYYY-MM-DD'
+      <div className='create__treatment'>
+          <header className='Home__Header'>
+            <div className='Logo' onClick={redirectToHome}><i className="fa-solid fa-house"></i></div>
+          </header>
+          <form className='treatment__form' onSubmit={handleSubmit}>
+              <label>Date</label>
+              <input required type="text" value={date} placeholder='YYYY-MM-DD'
               onChange={(e:any) => setDate(e.target.value)} />
               <label>Medical History</label>
               <textarea value={medicalHistory}
@@ -74,7 +82,7 @@ function CreateTreatment() {
               <label>Notes</label>
               <textarea value={notes}
               onChange={(e:any) => setNotes(e.target.value)} />
-              <button type='submit'>Submit</button>
+              <button className='_myBtn add_btn' type='submit'><i className="fa-solid fa-square-plus"></i></button>
           </form>
     </div>
   );

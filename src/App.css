@@ -1,9 +1,288 @@
+:root {
+  --firstColor: #9ceaef;
+  --gradient: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  --secondColor: #0093E9;
+  --allertColor: black;
+  --firstInkColor: black;
+  --secondInkColor: grey;
+  --mainBgColor: #ffffff;
+  --firstBgColor: #c4fbff;
+  --secondBgColor: #0093E9;
+  --allertBgColor: #f95d57;
+  --shadowFirst: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  --shadowHover: rgba(0, 0, 0, 0.24) 0px 3px 14px;
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+html {
+  font-family: 'Roboto', sans-serif;
+}
+body {
+  background-color: var(--mainBgColor);
+}
+
+._myBtn {
+  padding: 0.5rem;
+  font-size: larger;
+  font-weight: bolder;
+  border-radius: 7px;
+  color: var(--firstInkColor);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.Home {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Home__Header,
+.Show__Header {
+  width: 100%;
+  display: flex;
+  padding: 2rem;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--secondBgColor);
+  box-shadow: var(--shadowFirst);
+  background-image: var(--gradient);
+}
+
+.Home__Header .Logo {
+  cursor: pointer;
+}
+
+.Home__patientsContainer {
+  width: 80%;
+  margin: 2rem auto;
+  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.Home__patientsContainer .patient {
+  width: 100%;
+  padding: 1rem;
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid black;
+  border-radius: 14px;
+  background-color: var(--secondBgColor);
+  cursor: pointer;
+  box-shadow: var(--shadowFirst);
+  background-image: var(--gradient);
+}
+
+.patient:hover {
+  transform: scale(1.01);
+  box-shadow: var(--shadowHover);
+}
+
+.treatment:hover {
+  transform: scale(1.01);
+  box-shadow: var(--shadowHover);
+}
+
+.patient__description,
+.Show__patientInfo {
+  width: 100%;
+  gap: 0.3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.patient__description,
+.patient__description h1 {
+  margin-bottom: 1rem;
+}
+
+.patient ._myBtn {
+  text-align: end;
+}
+
+.Show__patientContainer {
+  width: 80%;
+  margin: 2rem auto;
+  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.Show__patientInfo {
+  margin-bottom: 1rem;
+}
+
+.Show__patientTreatments {
+  width: 100%;
+  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.Show__patientTreatments .treatment {
+  width: 100%;
+  padding: 1rem;
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 14px;
+  background-color: var(--secondBgColor);
+  box-shadow: var(--shadowFirst);
+  background-image: var(--gradient);
+}
+
+span {
+  font-weight: bold;
+}
 
 h1 {
-  color: red;
+  font-family: 'Lora', serif;
+}
+
+.create-patient__form,
+.treatment__form {
+  width: 80%;
+  margin: 3rem auto;
+  padding: 1rem;
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 14px;
+  background-color: var(--secondBgColor);
+  box-shadow: var(--shadowFirst);
+  background-image: var(--gradient);
+}
+
+.treatment__form {
+  margin: 2rem auto;
+}
+
+.create-patient__form label,
+.treatment__form label {
+  margin-top: 0.3rem;
+}
+
+.create-patient__form input,
+.treatment__form input {
+  padding: 0.5rem;
+  border: 1px solid black;
+  border-radius: 7px;
+}
+
+.create-patient__form ._myBtn,
+.treatment__form ._myBtn {
+  margin-top: 2rem;
+}
+
+.treatment__form textarea {
+  min-height: 50px;
+  border-radius: 7px;
+  padding: 2rem;
+}
+
+.fa-solid {
+  font-size:2rem;
+  cursor: pointer;
+}
+
+.fa-house:hover {
+  transform: scale(1.1);
+  animation-duration: 2s;
+}
+
+.fa-address-card {
+  font-size: 2.5rem;
+}
+
+
+.add_btn :hover {
+    animation-name: add;
+    animation-duration: 2s;
+}
+
+.delete_btn :hover {
+  animation-name: remove;
+  animation-duration: 0.5s;
+  animation-iteration-count: 3;
+}
+
+.fa-square-plus {
+  font-size: 4rem;
+}
+
+label {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 600px) {
+  .Home__patientsContainer {
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .Home__patientsContainer .patient {
+      width: 45%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+  .treatment__form textarea {
+      min-height: 200px;
+    }
+  .Home__patientsContainer .patient {
+    width: 30%;
+  }
+}
+
+@keyframes add {
+  0% {
+    transform: scale(1);
+  }
+
+  20% {
+    transform: scale(1.6);
+  }
+
+  40% {
+    transform: scale(0.6);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes remove {
+  0% {
+    transform: rotate(0);
+  }
+
+  25% {
+    transform: rotate(15deg);
+  }
+
+  50% {
+    transform: rotate(-15deg);
+  }
+
+  75% {
+    transform: rotate(15deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
 }

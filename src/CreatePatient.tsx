@@ -31,23 +31,36 @@ function CreatePatient() {
         const resJson = await response.json();
         navigate(`/patients/${resJson.id}`);
     };
+
+    const redirectToHome = () => {
+      navigate("/");
+    }
   
   return (
-    <div className='create-patient'>
-          <form onSubmit={handleSubmit}>
-              <input type="text" value={name} placeholder='name'
-              onChange={(e:any) => setName(e.target.value)} />
-              <input type="text" value={surname} placeholder='surname'
+      <div className='create-patient'>
+        <header className='Home__Header'>
+            <div className='Logo' onClick={redirectToHome}><i className="fa-solid fa-house"></i></div>
+        </header>
+          <form className='create-patient__form' onSubmit={handleSubmit}>
+              <label>First Name:</label>
+              <input required type="text" value={name} placeholder='First name'
+                  onChange={(e: any) => setName(e.target.value)} />
+              <label>Last Name:</label>
+              <input required type="text" value={surname} placeholder='Last name'
               onChange={(e:any) => setSurname(e.target.value)} />
-              <input type="number" value={age} placeholder='age'
-              onChange={(e:any) => setAge(e.target.value)} />
-              <input type="number" value={phone} placeholder='phone'
-              onChange={(e:any) => setPhone(e.target.value)} />
-              <input type="text" value={address} placeholder='address'
-              onChange={(e:any) => setAddress(e.target.value)} />
-              <input type="text" value={email} placeholder='email'
+              <label>Date of birth:</label>
+              <input required type="text" value={age} placeholder='YYYY-MM-DD'
+                  onChange={(e: any) => setAge(e.target.value)} />
+              <label>Phone number:</label>
+              <input required type="tel" value={phone} placeholder='mobile phone'
+                  onChange={(e: any) => setPhone(e.target.value)} />
+              <label>Address:</label>
+              <input required type="text" value={address} placeholder='address'
+                  onChange={(e: any) => setAddress(e.target.value)} />
+              <label>Email:</label>
+              <input required type="email" value={email} placeholder='email'
               onChange={(e:any) => setEmail(e.target.value)} />
-              <button type='submit'>Create new patient</button>
+              <button className='_myBtn add_btn' type='submit'><i className="fa-solid fa-square-plus"></i></button>
           </form>
     </div>
   );

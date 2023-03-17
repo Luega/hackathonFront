@@ -25,13 +25,15 @@ function Client({ patient, handleReRender }: Props) {
   }
 
   return (
-    <div className='patient' onClick={handleClick}>
-      <h1>{ patient.name } { patient.surname }</h1>
-      <div>{ patient.age }</div>
-      <div>{ patient.phone }</div>
-      <div>{ patient.address }</div>
-      <div>{ patient.email }</div>
-      <button onClick={deletePatient}>Delete</button>
+    <div className='patient grow' onClick={handleClick}>
+      <div className='patient__description'>
+        <h1>{ patient.name } { patient.surname }</h1>
+        <div><span>Date of birth:  </span>{ patient.age }</div>
+        <div><span>Phone number:  </span>{ patient.phone }</div>
+        <div><span>Address:  </span>{ patient.address }</div>
+        <div><span>Email:  </span>{ patient.email }</div>
+      </div>
+      <button className='_myBtn delete_btn' onClick={deletePatient}><i className="fa-solid fa-trash"></i></button>
     </div>
   );
 }

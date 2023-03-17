@@ -23,21 +23,27 @@ function Home() {
       navigate("/createPatient");
   }
 
+  const redirectToHome = () => {
+      navigate("/");
+  }
+
   const handleReRender = () => {
     setReRender(!reRender);
   }
   
   return (
     <div className='Home'>
-      <header>
-        <div>Logo</div>
+      <header className='Home__Header'>
+        <div className='Logo' onClick={redirectToHome}><i className="fa-solid fa-house"></i></div>
         <div>
-          <button onClick={handleClick}>ADD NEW</button>
+          <button className='_myBtn add_btn' onClick={handleClick}><i className="fa-solid fa-user-plus"></i></button>
         </div>
       </header>
-      {patients?.map((patient, index) => {
-        return <Client key={index} patient={patient} handleReRender={handleReRender} />
-      })}
+      <main className='Home__patientsContainer'>
+        {patients?.map((patient, index) => {
+          return <Client key={index} patient={patient} handleReRender={handleReRender} />
+        })}
+      </main> 
     </div>
   );
 }
