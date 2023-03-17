@@ -29,7 +29,6 @@ function CreatePatient() {
         });
         const response = await fetch(request);
         const resJson = await response.json();
-        console.log(resJson.id);
         navigate(`/patients/${resJson.id}`);
     };
   
