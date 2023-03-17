@@ -1,47 +1,32 @@
-# Getting Started with Create React App
+#Manual Therapy Management App - Front End
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the front-end part of the Manual Therapy Management App, a web application designed to help manual therapists manage their patients and information related to their visits. This part of the application is built using React and React Router.
 
-## Available Scripts
+##Installation
+To install the application, clone the repository to your local machine and run the following commands:
 
-In the project directory, you can run:
+npm install
+npm run start
+This will install all the necessary dependencies and start the development server.
 
-### `npm start`
+##Usage
+Once the development server is running, you can view the application in your web browser at http://localhost:3000. From there, you can navigate through
+the application.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+##IMPORTANT
+You will need a back-end repo (https://github.com/Luega/hackathonServer) in order to use the app.
+You will need a connection to a MongoDB database to use the features.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+##Features
+A homepage that provides an overview of patients.
+A page that shows details of the patients and treatments that he/she did.
+The ability to add new patients to the system and view their information.
+The ability to add new treatment to patients and store important information releated to the treatment.
+The ability to delete to patients and all the related data.
 
-### `npm test`
+##Technologies Used
+React
+React Router
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-# hackathonFront
+##License
+This project is licensed under the MIT License. See the LICENSE file for more information.

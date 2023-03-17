@@ -22,7 +22,7 @@ function CreateTreatment() {
     const handleSubmit = async (e: any) => {
         e.preventDefault();
         const request = new Request(`http://localhost:8000/api/patients/${id}/treatments`, {
-            method: "POST",
+            method: "PUT",
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
                 date: date,
